@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/result.css">
+</head>
+<body>
+
+    <div class="container">
+    <section class="left">
+        <p class="score"><%= score %></p>
+        <div class="circle-border">
+            <div class="circle">
+                <div class="score-text">
+                    <p class="percentage"><%= score %></p>
+                    <p class="tone-heading"><%= tone %></p>
+                </div>
+            </div>
+          </div>
+    </section>
+
+    <section class="right">
+        <div class="result">
+            <p>Tone</p>
+            <p class="right-p"><%= tone %></p>
+        </div>
+        <div class="result">
+            <p>Most frequently used</p>
+            <p class="right-p"><%= frequentWords %></p>
+        </div>
+
+        <div class="result">
+            <p>Filler Words</p>
+            <p class="right-p"><%= filler %></p>
+        </div>
+        
+      
+    </section>
+</div>
+    <script src="/result.js"></script>
+    <!-- <h1><%= score %></h1>
+    <h1><%= tone %></h1>
+    <h1><%= filler %></h1>
+    <h1><%= frequentWords %></h1> -->
+</body>
+</html>

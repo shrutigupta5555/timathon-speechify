@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --clr-accent:rgb(146,221,200);
+    --clr-background: #191414;
+    --clr-light-background: #302E2E;
+    --clr-text: #fff;
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+  }
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+    margin: 10px 10px 10px 0;
+  }
+ 
+ h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/* section */
+.section {
+  padding: 5rem 0  0 0;
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+/*
+
+/*
+================================================ 
+local classes 
+==================================================
+*/
+
+body{
+    background-color: var(--clr-background);
+    font-family: var(--ff-primary);
+   
+}
+
+.welcome {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.welcome-tab {
+    background-color: var(--clr-accent);
+    height: 30px;
+    min-width: 200px;
+    max-width: 30vw;
+    border-radius: 25px 0px 0px 25px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.circle {
+    height: 15px;
+    width: 15px;
+    align-self: center;
+    background-color: var(--clr-text);
+    border-radius: 50%;
+    margin-left: -30px;
+}
+.welcome-tab p {
+    align-self: center;
+}
+
+.container {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: auto;
+}
+
+.left {
+    height: 40vh;
+    min-width: 300px;
+    width: 35vw;
+    background-color: var(--clr-light-background);
+    position: relative;
+}
+
+.right{
+    height: 40vh;
+    min-width: 300px;
+    width: 35vw;
+    background-color: var(--clr-light-background);
+    overflow: scroll;
+    color: var(--clr-text);
+}
+
+
+.bottom {
+
+    position: fixed;
+    margin-top: 20px;
+    height: 35px;
+    bottom: 0px;
+    width: 100%;
+    background-color: var(--clr-light-background);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+   
+}
+
+.mic {
+    position: absolute;
+    bottom: 35px;
+    color: var(--clr-accent);
+    transform: scale(2.5);
+    margin: 0 auto;
+    background-color: var(--clr-light-background);
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.play {
+  background-color: #fff;
+}
+
+@keyframes move_wave {
+  0% {
+      transform: translateX(0) translateZ(0) scaleY(1)
+  }
+  50% {
+      transform: translateX(-25%) translateZ(0) scaleY(0.55)
+  }
+  100% {
+      transform: translateX(-50%) translateZ(0) scaleY(1)
+  }
+}
+.waveWrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1px;
+  background-image: linear-gradient( var(--clr-accent) 20%, 75%,var(--clr-light-background));
+}
+.bgTop {
+  z-index: 15;
+  opacity: 0.5;
+}
+.bgMiddle {
+  z-index: 10;
+  opacity: 0.75;
+}
+.bgBottom {
+  z-index: 5;
+}
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+.waveTop {
+  background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+animation: move-wave 3s;
+ -webkit-animation: move-wave 3s;
+ -webkit-animation-delay: 1s;
+ animation-delay: 1s;
+}
+.waveMiddle {
+  background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+  background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 15s linear infinite;
+}
+
+.results {
+  margin-top: 20px;
+  background-color: var(--clr-accent);
+  padding: 0.5rem 1.5rem;
+  margin-left: 70vw;
+  border-radius: 25px;
+  font-size: medium;
+}
+
+
+@media screen and (max-width: 650px) {
+    .section-center {
+      width: 95vw;
+    }
+
+    .container{
+        margin-top: 30px;
+    }
+
+    .left{
+        height: 30vh;
+    }
+
+    .right{
+        height: 30vh;
+    }
+  }
+
